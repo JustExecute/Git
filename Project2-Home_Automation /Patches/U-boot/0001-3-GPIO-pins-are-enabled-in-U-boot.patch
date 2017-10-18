@@ -1,0 +1,54 @@
+From 487055bf874fe5474e2a385ef49871087a9c5fff Mon Sep 17 00:00:00 2001
+From: lavanya <lavanya22@gmail.com>
+Date: Thu, 3 Nov 2016 00:11:17 -0700
+Subject: [PATCH] 3 GPIO pins are enabled in U-boot
+
+---
+ Makefile              |  4 ++--
+ board/ti/am335x/mux.c | 14 ++++++++++++++
+ 2 files changed, 16 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 99cc8cf..5c2f61d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -3,9 +3,9 @@
+ #
+ 
+ VERSION = 2016
+-PATCHLEVEL = 09
++PATCHLEVEL =10 
+ SUBLEVEL =
+-EXTRAVERSION = -rc1
++EXTRAVERSION = Smart_Home_Automation
+ NAME =
+ 
+ # *DOCUMENTATION*
+diff --git a/board/ti/am335x/mux.c b/board/ti/am335x/mux.c
+index 9db7e14..aa9cb32 100644
+--- a/board/ti/am335x/mux.c
++++ b/board/ti/am335x/mux.c
+@@ -135,6 +135,20 @@ static struct module_pin_mux gpio0_7_pin_mux[] = {
+ 	{-1},
+ };
+ 
++static struct module_pin_mux gpio0_8_pin_mux[] = {
++	{OFFSET(lcd_data12), (MODE(7) | PULLUDEN)},	/* GPIO0_8 */
++	{-1},
++};
++static struct module_pin_mux gpio0_9_pin_mux[] = {
++	{OFFSET(lcd_data13), (MODE(7) | PULLUDEN)},	/* GPIO0_9 */
++	{-1},
++};
++
++static struct module_pin_mux gpio0_10_pin_mux[] = {
++	{OFFSET(lcd_data14), (MODE(7) | PULLUDEN)},	/* GPIO0_10 */
++	{-1},
++};
++
+ static struct module_pin_mux gpio0_18_pin_mux[] = {
+ 	{OFFSET(usb0_drvvbus), (MODE(7) | PULLUDEN)},	/* GPIO0_18 */
+ 	{-1},
+-- 
+1.9.1
+

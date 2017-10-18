@@ -1,0 +1,26 @@
+From 24b7ecdd95a1c73ec56fb07fa8e02de40dca35f8 Mon Sep 17 00:00:00 2001
+From: ShivareddyMH <smhreddyhyd16@gmail.com>
+Date: Wed, 2 Nov 2016 14:52:35 +0530
+Subject: [PATCH] Mux configuration is done for relay in IoT_Weather_monitoring
+
+---
+ arch/arm/boot/dts/am335x-boneblack.dts | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/arch/arm/boot/dts/am335x-boneblack.dts b/arch/arm/boot/dts/am335x-boneblack.dts
+index edf35ce..1286a43 100644
+--- a/arch/arm/boot/dts/am335x-boneblack.dts
++++ b/arch/arm/boot/dts/am335x-boneblack.dts
+@@ -32,6 +32,9 @@
+ &am33xx_pinmux {
+ 	nxp_hdmi_bonelt_pins: nxp_hdmi_bonelt_pins {
+ 		pinctrl-single,pins = <
++			0x0d0 0x07	/*gpio0 8 for led */
++			0x0d4 0x07	/*gpio0 9 for led */
++			0x0d8 0x07	/*gpio0 10 for led */
+ 			0x1b0 0x03      /* xdma_event_intr0, OMAP_MUX_MODE3 | AM33XX_PIN_OUTPUT */
+ 			0xa0 0x08       /* lcd_data0.lcd_data0, OMAP_MUX_MODE0 | AM33XX_PIN_OUTPUT | AM33XX_PULL_DISA */
+ 			0xa4 0x08       /* lcd_data1.lcd_data1, OMAP_MUX_MODE0 | AM33XX_PIN_OUTPUT | AM33XX_PULL_DISA */
+-- 
+1.9.1
+

@@ -1,0 +1,169 @@
+                                                               IOT SMART GATEWAY
+							       -----------------
+
+FOR ADC APPLICATION:
+-------------------
+
+It is for Static Compilation.
+
+$make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
+select the below.
+
+Device Drivers  --->
+         [*]  Industrial I/O support  --->
+                  [*]  Enable buffer support within IIO
+                  <*>     Industrial I/O lock free software ring
+                       Analog to digital converters  --->
+                               <*> TI's AM335X ADC driver
+-------------------------------------------------------------------------------------
+
+It is for Dynamic Compilation.
+
+$make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
+select the below.
+
+Device Drivers  --->
+         [M]  Industrial I/O support  --->
+                  [*]  Enable buffer support within IIO
+                  <*>     Industrial I/O lock free software ring
+                       Analog to digital converters  --->
+                               <M> TI's AM335X ADC driver
+------------------------------------------------------------------------------------
+
+This step applies if the driver is built as module
+
+1)Do "make modules" to build the ADC driver as module. The module should be present in "drivers/iio/adc/ti_am335x_adc.ko".
+2)Load the driver using "ti_am335x_adc.ko".
+
+ADC device tree data is added in file(arch/arm/boot/dts/am335x-boneblack.dts) as shown below.
+
+$make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- dtbs
+
+&tscadc {
+    status = "okay";
+};
+
+&am335x_adc {
+    ti,adc-channels = <0 1 2 3 4 5 6 7>;
+};
+--------------------------------------------------------------------------------
+
+*)To test ADC, Connect a DC voltage supply to each of the AIN0 through AIN7 pins (based on your channel configuration), and vary voltage between 0 and 1.8v reference voltage. 
+
+ubuntu@ubuntu-armhf:~# ls -al /sys/bus/iio/devices/iio\:device0/
+total 0
+drwxr-xr-x 3 root root    0 Nov 02 13:35 .
+drwxr-xr-x 4 root root    0 Nov 02 13:35 ..
+-r--r--r-- 1 root root 4096 NOv 02 13:35 dev
+-rw-r--r-- 1 root root 4096 Nov 02 13:35 in_voltage0_raw
+-rw-r--r-- 1 root root 4096 Nov 02 13:35 in_voltage1_raw
+-rw-r--r-- 1 root root 4096 NOv 02 13:35 in_voltage2_raw
+-rw-r--r-- 1 root root 4096 NOV 02 13:35 in_voltage3_raw
+-rw-r--r-- 1 root root 4096 Nov 02 13:35 in_voltage4_raw
+-rw-r--r-- 1 root root 4096 NOv 02 13:35 in_voltage5_raw
+-rw-r--r-- 1 root root 4096 NOV 02 13:35 in_voltage6_raw
+-rw-r--r-- 1 root root 4096 Nov 02 13:35 in_voltage7_raw
+-r--r--r-- 1 root root 4096 Nov 02 13:35 name
+drwxr-xr-x 2 root root    0 Nov 02 13:35 power
+lrwxrwxrwx 1 root root    0 Nov 02 13:35 subsystem -> ../../../../../bus/iio
+-rw-r--r-- 1 root root 4096 Nov 02 13:35 uevent
+---------------------------------------------------------------------------------
+
+*)The buffer directory contains 3 files:
+
+ubuntu@ubuntu-armhf:~# ls -al /sys/bus/iio/devices/iio\:device0/buffer/
+drwxr-xr-x    2 root     root            0 Nov  2 00:00 .
+drwxr-xr-x    5 root     root            0 Nov  2 00:00 ..
+-rw-r--r--    1 root     root         4096 Nov  2 00:01 bytes_per_datum
+-rw-r--r--    1 root     root         4096 Nov  2 00:01 enable
+-rw-r--r--    1 root     root         4096 Nov  2 00:01 length
+-----------------------------------------------------------------------------------
+
+*)Scan_elements directory contains interfaces for elements that will be captured for a single sample set in the buffer.
+
+Scan_elements exposes 3 files per channel:
+
+1)in_voltageX_en: is this channel enabled?
+2)in_voltageX_index: index of this channel in the buffer's chunks
+3)in_voltageX_type : How the ADC stores its data.
+ubuntu@ubuntu-armhf:~# ls -al /sys/bus/iio/devices/iio\:device0/scan_elements/
+drwxr-xr-x    2 root     root            0 Nov  2 00:00 .
+drwxr-xr-x    5 root     root            0 Nov  2 00:00 ..
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage0_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage0_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage0_type
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage1_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage1_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage1_type
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage2_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage2_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage2_type
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage3_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage3_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage3_type
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage4_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage4_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage4_type
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage5_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage5_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage5_type
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage6_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage6_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage6_type
+-rw-r--r--    1 root     root         4096 Nov  2 00:02 in_voltage7_en
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage7_index
+-r--r--r--    1 root     root         4096 Nov  2 00:02 in_voltage7_type
+------------------------------------------------------------------------------------
+
+To compile:
+$arm-linux-gnueabi-gcc -static adcapp1.c -o adcapp
+
+ubuntu@ubuntu-armhf:~$ sudo ./adcapp
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+FOR RELAY APPLICATION:
+----------------------
+
+In relay application we are using 3 leds.For leds we are using P8 HEADER.
+1)gpio0[8]  /* P8-35  0x0d0-offset  0x07-Mode7 */
+2)gpio0[9]  /* P8-33  0x0d4-offset  0x07-Mode7 */
+3)gpio0[10]  /* P8-31  0x0d8-offset  0x07-Mode7 */
+
+*)In device tree data is added in file(arch/arm/boot/dts/am335x-boneblack.dts) as shown below.
+
+   0x0d0 0x07   /* gpio0[8] */
+   0x0d4 0x07   /* gpio0[9] */
+   0x0d8 0x07   /* gpio0[10] */
+remaining all address put in comments.
+
+$make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- dtbs
+
+On board terminal when we are running the relay application the gpio create as shown below.
+
+In board terminal:-
+-------------------
+root@ubuntu-armhf:/sys/class/gpio#
+export gpio8 gpiochip0 gpiochip64 unexport
+gpio10 gpio9 gpiochip32 gpiochip96
+
+On  another board terminal it should compile like this for mysql.
+
+ubuntu@ubuntu-armhf:$ mysql -u root -p
+
+mysql> show databases;                          /* It shows how many databases we have */
++------------------------------+
+|Database 		       |
++------------------------------+
+| information_schema           |
+| IOT_WEATHER_MONITORING       | 
+| mysql      		       |
+| performance_schema	       |	
+| phpmyadmin		       |
++------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> use IOT_WEATHER_MONITORING;             /* "use" It is used to go that database */
+
+mysql> update relay set state=1;               /* "update" is used for set to 1 or 0. Now it set to 1 */
+
+mysql> update relay set state=0;               /* It set to 0 */ 

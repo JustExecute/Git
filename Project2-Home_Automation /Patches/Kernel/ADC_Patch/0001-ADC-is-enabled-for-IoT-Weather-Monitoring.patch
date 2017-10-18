@@ -1,0 +1,45 @@
+From 7a507425aebf4ea3219237fed0a1b68e349e2c6d Mon Sep 17 00:00:00 2001
+From: ShivareddyMH <smhreddyhyd16@gmail.com>
+Date: Wed, 2 Nov 2016 15:15:46 +0530
+Subject: [PATCH] ADC is enabled for IoT Weather Monitoring
+
+---
+ Makefile                               | 2 +-
+ arch/arm/boot/dts/am335x-boneblack.dts | 8 ++++++++
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 7d0b699..c058e17 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,7 @@
+ VERSION = 3
+ PATCHLEVEL = 14
+ SUBLEVEL = 1
+-EXTRAVERSION =
++EXTRAVERSION = ADC_AM335X
+ NAME = Shuffling Zombie Juror
+ 
+ # *DOCUMENTATION*
+diff --git a/arch/arm/boot/dts/am335x-boneblack.dts b/arch/arm/boot/dts/am335x-boneblack.dts
+index f213ccd..05074e2 100644
+--- a/arch/arm/boot/dts/am335x-boneblack.dts
++++ b/arch/arm/boot/dts/am335x-boneblack.dts
+@@ -62,6 +62,14 @@
+ 	};
+ };
+ 
++&tscadc {
++    status = "okay";
++};
++
++&am335x_adc {
++    ti,adc-channels = <0 1 2 3 4 5 6 7>;
++};
++
+ &lcdc {
+ 	status = "okay";
+ };
+-- 
+1.9.1
+

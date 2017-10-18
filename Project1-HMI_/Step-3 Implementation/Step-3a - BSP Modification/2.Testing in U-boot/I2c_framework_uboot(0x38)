@@ -1,0 +1,277 @@
+i2c framework in uboot with slave ft5x06 slave address (0x38)
+touch_test=> i2c dev *************************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 1814,       fuction name do_i2c_bus_num,    file name cmd/i2c.c
+Current bus is 0
+touch_test=> i2c dev 1
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 1814,       fuction name do_i2c_bus_num,    file name cmd/i2c.c
+Setting bus to 1
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 224,        fuction name i2c_init_bus,      file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 769,        fuction name omap24_i2c_init,   file name drivers/i2c/omap24xx_i2c.c
+line number 305,        fuction name __omap24_i2c_init,         file name drivers/i2c/omap24xx_i2c.c
+line number 196,        fuction name __omap24_i2c_setspeed,     file name drivers/i2c/omap24xx_i2c.c
+line number 70,         fuction name omap24_i2c_findpsc,        file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+
+touch_test=> i2c md 0x38 00*****************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 521,        fuction name do_i2c_md,         file name cmd/i2c.c
+line number 252,        fuction name get_alen,  file name cmd/i2c.c
+line number 342,        fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+0000: 00 b2 db 90 55 72 ec 00 00 f4 7a 22 72 00 00 09    ....Ur....z"r...
+
+touch_test=> i2c md 0x38 00*********************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 521,        fuction name do_i2c_md,         file name cmd/i2c.c
+line number 252,        fuction name get_alen,  file name cmd/i2c.c
+line number 342,        fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+0000: 00 b2 db 90 55 72 ec 00 00 f4 7a 22 72 00 00 09    ....Ur....z"r...
+
+touch_test=> i2c mm 0x38 00********************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 1909,       fuction name do_i2c_mm,         file name cmd/i2c.c
+line number 816,        fuction name mod_i2c_mem,       file name cmd/i2c.c
+line number 252,        fuction name get_alen,  file name cmd/i2c.c
+00000000:line number 342,       fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+ 00 ? 00
+line number 349,        fuction name i2c_write,         file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 743,        fuction name omap24_i2c_write,  file name drivers/i2c/omap24xx_i2c.c
+line number 571,        fuction name __omap24_i2c_write,        file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+00000001:line number 342,       fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+
+>>>>>>>>>>>>>>>>>>>>>>>>memory display (02-address)<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+touch_test=> i2c md 0x38 02*********************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 521,        fuction name do_i2c_md,         file name cmd/i2c.c
+line number 252,        fuction name get_alen,  file name cmd/i2c.c
+line number 342,        fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+0002: 00 41 15 01 77 00 00 ff ff ff ff 00 00 ff ff ff    .A..w...........
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>input 1 touch<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+touch_test=> i2c md 0x38 02*************************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 521,        fuction name do_i2c_md,         file name cmd/i2c.c
+line number 252,        fuction name get_alen,  file name cmd/i2c.c
+line number 342,        fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+0002: 01 81 a9 02 c8 00 00 ff ff ff ff 00 00 ff ff ff    ................
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>input 3 touch<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+touch_test=> i2c md 0x38 02************************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 521,        fuction name do_i2c_md,         file name cmd/i2c.c
+line number 252,        fuction name get_alen,  file name cmd/i2c.c
+line number 342,        fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+0002: 03 81 c5 02 81 00 00 82 08 11 b7 00 00 81 12 21    ...............!
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>input 5 touch<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+touch_test=> i2c md 0x38 02**********************************************************************************************************
+line number 2011,       fuction name do_i2c,    file name cmd/i2c.c
+line number 521,        fuction name do_i2c_md,         file name cmd/i2c.c
+line number 252,        fuction name get_alen,  file name cmd/i2c.c
+line number 342,        fuction name i2c_read,  file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 20,         fuction name i2c_get_adapter,   file name drivers/i2c/i2c_core.c
+line number 696,        fuction name omap24_get_base,   file name drivers/i2c/omap24xx_i2c.c
+line number 732,        fuction name omap24_i2c_read,   file name drivers/i2c/omap24xx_i2c.c
+line number 427,        fuction name __omap24_i2c_read,         file name drivers/i2c/omap24xx_i2c.c
+line number 106,        fuction name wait_for_bb,       file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 137,        fuction name wait_for_event,    file name drivers/i2c/omap24xx_i2c.c
+line number 173,        fuction name flush_fifo,        file name drivers/i2c/omap24xx_i2c.c
+0002: 05 80 88 03 88 00 00 82 2b 12 bf 00 00 81 92 21    ........+......!
+
+
+
+
+
+

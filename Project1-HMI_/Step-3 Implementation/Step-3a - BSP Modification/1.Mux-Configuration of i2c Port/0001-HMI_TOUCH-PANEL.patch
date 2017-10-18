@@ -1,0 +1,76 @@
+From 17527158537069c390859441aae57806f89c508a Mon Sep 17 00:00:00 2001
+From: harinchandu <harin.chandu@gmail.com>
+Date: Thu, 6 Oct 2016 09:47:02 +0530
+Subject: [PATCH] HMI_TOUCH PANEL
+
+---
+ Makefile              |  2 +-
+ board/ti/am335x/mux.c | 18 ++++++++++++------
+ 2 files changed, 13 insertions(+), 7 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index f4b3636..fca7ee8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -5,7 +5,7 @@
+ VERSION = 2016
+ PATCHLEVEL = 09
+ SUBLEVEL = HARIN
+-EXTRAVERSION = -rc1
++EXTRAVERSION = I2C1
+ NAME =
+ 
+ # *DOCUMENTATION*
+diff --git a/board/ti/am335x/mux.c b/board/ti/am335x/mux.c
+index 66dbe1e..88d1f84 100644
+--- a/board/ti/am335x/mux.c
++++ b/board/ti/am335x/mux.c
+@@ -112,7 +112,7 @@ static struct module_pin_mux i2c0_pin_mux[] = {
+ 	{-1},
+ };
+ 
+-static struct module_pin_mux i2c1_pin_mux[] = {
++static struct module_pin_mux i2c1_pin_mux[] = { ///****************************************i2c1*****************************//
+ 	{OFFSET(spi0_d1), (MODE(2) | RXACTIVE |
+ 			PULLUDEN | SLEWCTRL)},	/* I2C_DATA */
+ 	{OFFSET(spi0_cs0), (MODE(2) | RXACTIVE |
+@@ -139,10 +139,10 @@ static struct module_pin_mux gpio0_18_pin_mux[] = {
+ 	{OFFSET(usb0_drvvbus), (MODE(7) | PULLUDEN)},	/* GPIO0_18 */
+ 	{-1},
+ };
+-static struct module_pin_mux gpio0_30_pin_mux[] = {
+-        {OFFSET(gpmc_wait0), (MODE(7))},   /* GPIO0_30*******I_ADDED********************************** */
+-        {-1},
+-};
++//static struct module_pin_mux gpio0_30_pin_mux[] = {
++//        {OFFSET(gpmc_wait0), (MODE(7))},   /* GPIO0_30*******I_ADDED********************************** */
++//        {-1},
++//};
+ //static struct module_pin_mux gpio0_31_pin_mux[] = {
+ //        {OFFSET(gpmc_wpn), (MODE(7)|PULLUDEN|PULLDOWN_EN|RXACTIVE)}, /* GPIO0_31***I_ADDED********************************** */
+ //        {-1},
+@@ -312,6 +312,11 @@ void enable_i2c0_pin_mux(void)
+ 	configure_module_pin_mux(i2c0_pin_mux);
+ }
+ 
++//void enable_i2c1_pin_mux(void) //*************************************i2c1****************************************//
++//{
++//        configure_module_pin_mux(i2c1_pin_mux);
++//}
++
+ /*
+  * The AM335x GP EVM, if daughter card(s) are connected, can have 8
+  * different profiles.  These profiles determine what peripherals are
+@@ -348,7 +353,8 @@ static unsigned short detect_daughter_board_profile(void)
+ 
+ void enable_board_pin_mux(void)
+ {
+-	configure_module_pin_mux(gpio0_30_pin_mux);
++	configure_module_pin_mux(i2c1_pin_mux);
++//	configure_module_pin_mux(gpio0_30_pin_mux);
+         //configure_module_pin_mux(gpio0_31_pin_mux);
+ 	/* Do board-specific muxes. */
+ 	if (board_is_bone()) {
+-- 
+1.9.1
+

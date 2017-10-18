@@ -1,0 +1,60 @@
+I. U-boot 
+
+i) Modified file name and function or structure
+	mux.c file in board/ti/am335x/ directory.
+	
+ii) Insertions (Adding new structures, and enabling configuration in enable_board_pin_mux(void))
+	static struct module_pin_mux gpio0_8_pin_mux[] = { 
+		{OFFSET(lcd_data12), (MODE(7) | PULLUDEN)},	/* GPIO0_8 */ 
+		{-1}, 	
+	}; 
+	static struct module_pin_mux gpio0_9_pin_mux[] = { 
+		{OFFSET(lcd_data13), (MODE(7) | PULLUDEN)},	/* GPIO0_9 */ 
+		{-1}, 
+	}; 
+	
+	static struct module_pin_mux gpio0_10_pin_mux[] = { 
+		{OFFSET(lcd_data14), (MODE(7) | PULLUDEN)},	/* GPIO0_10 */ 
+		{-1}, 
+	}; 
+
+	configure_module_pin_mux(gpio0_7_pin_mux); 
+	configure_module_pin_mux(gpio0_9_pin_mux); 
+	configure_module_pin_mux(gpio0_10_pin_mux);		
+
+iii) Deletions
+	No any structure or function is deleted.
+
+
+II. Kernel Level
+
+	a) For ADC,
+
+		i) Modified file
+			am335x-boneblack.dts in arch/arm/boot/dts directory..
+
+		ii) Insertions
+			&tscadc {
+				status = “okay”;
+				};
+			&am335x_adc {
+				ti,adc-channels = < 0 1 2 3 4 5  6 7 >;
+				};
+
+		iii)Deletions
+			Nothing is deleted for ADC-interfacing in kernel source file..
+	
+	b) For Relay,
+
+		i) Modified file
+			am335x-boneblack.dts in arch/arm/boot/dts directory..
+			
+		ii) Insertions 
+			In &am335x_pinmux, 
+				0x0d0 0x07	/*gpio0 8 for led */
+				0x0d4 0x07	/*gpio0 9 for led */
+				0x0d8 0x07	/*gpio0 10 for led */
+
+		iii) Deletions
+			In case of conflict in gpio pins, disable previously used gpio pins in pinmux function structure.
+
