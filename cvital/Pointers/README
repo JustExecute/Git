@@ -1,0 +1,69 @@
+Pointers Basics:
+----------------
+1. What are Pointers? What is void pointer?
+2. What are uninitialised pointers and NULL Pointer
+3. Pointer syntax & Pointer Arithmetic (reference, dereference , addition, subtraction) , precedence
+4. Call by Value / Call by Reference (Swapping example).
+5. Arrays vs Pointers
+6. malloc,calloc,realloc and free
+7. Advantages and disadvantages of pointers?
+8. Is it possible to have negative index in an array?
+9. What is the format specifier for printing a pointer value ?
+
+ 
+Pointer arithmetic on Addition and Subtraction
+----------------------------------------------
+1.Addition of a constant to a pointer and applying increment operator on pointer is perfectly VALID.
+2.Subtraction of a constant from a pointer and applying decrement operator on pointer is perfectly VALID.
+3. Subtraction of one pointer from the other pointer of the same Type is perfectly VALID.
+
+Apart from the above 3 points, what is NOT VALID on pointers are,
+Addition of two pointers
+Multiplication of two pointers
+Division of one pointer from another
+Modulus operator is not permitted on pointers
+Multiplication of a constant to a pointer
+Division of a constant from a pointer
+
+Subtraction of a pointer from another pointer of same base type returns an integer, which denotes the number of elements of that type between the two pointers.  
+Example: If you have two int pointers ptr1 and ptr2, containing address 3000 and 3020 respectively then ptr2-ptr1 will give 5(since size of int iis 4).
+
+ptrsub.c  - 
+
+Typcasting:
+----------
+Typecasting is simply a way to temporarily change a variable's data type, despite how it was originally defined. When a variable is typecast into a different type, the compiler is basically told to treat that variable as if it were the new data type, but only for that operation. The syntax for typecasting is as follows:
+
+(typecast_data_type) variable
+
+typecasting1.c,typcasting2.c -  typecast example
+
+Pointers Examples:
+-----------------
+ptr.c  -   Basic pointer example.
+ptr1.c -   Assume that 0x7600 is an address. How will you store 50 in that address?
+le_be.c -  write a program in C to know whether the architectue is Big Endian or Little Endian?
+nullptr.c -Null pointer exception in pointers, how to print main() function address. 
+ptrsub.c - Implement sizeof operator?
+sizeof.c - Implement sizeof operator?
+sizeofptr.c -   size of pointer
+void.c -   void pointer
+malloc.c -  dynamic memory allocation
+$ ./malloc 2>  stderror.lo
+
+
+
+
+10. What is the difference ?
+
+                        Char a[] = “string”;
+                        char *p = “literal”;
+
+13. About function pointers & what are the advantages? Where to Use?
+
+16. What is the difference between "const char *ptr" & "char * const ptr"? Write a simpe example and Explain it?
+17. When to use pointer to array & arry of pointers?
+18. Write a program for Sting reverse & string compare without using the standard lib functions?
+19. Difference between malloc & calloc? What is the return type of malloc?
+
+

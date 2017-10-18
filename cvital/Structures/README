@@ -1,0 +1,43 @@
+C structures:
+------------
+
+struct1.c: This program is used to store and access “id, name and percentage” for one student. We can also store an
+d access these data for many students using array of structures.
+
+struct2.c:  In this program, above created header file is included in “struct2.c” source file as #include “structure.h”. So, the structure declared in “structure.h” file can be used in “struct2.c” source file.
+
+Array of Structures:
+-----------------
+struct3.c: This program is used to store and access “id, name and percentage” for 3 students. Structure array is used in this program to store and display records for many students. You can store “n” number of students record by declaring structure variable as ‘struct student record[n]“,
+
+Structure using Pointer:
+-----------------------
+C structure can be accessed in 2 ways in a C program. They are,
+
+1. Using normal structure variable
+2. Using pointer variable
+       Dot(.) operator is used to access the data using normal structure variable and arrow (->) is used to access the data using pointer variable. You have learnt how to access structure data using normal variable in C – Structure topic. So, we are showing here how to access structure data using pointer variable in below C program.
+
+struct4.c: In this program, “record1″ is normal structure variable and “ptr” is pointer structure variable. As you know, Dot(.) operator is used to access the data using normal structure variable and arrow(->) is used to access data using pointer variable. 
+
+Passing struct to function:
+--------------------------
+It can be done in below 3 ways.
+
+1. Passing structure to a function by value
+2. Passing structure to a function by address(reference)
+3. No need to pass a structure – Declare structure variable as global
+
+struct5.c: In this program, the whole structure is passed to another function by value. It means the whole structure is passed to another function with all members and their values. So, this structure can be accessed from called function. This concept is very useful while writing very big programs in C.
+
+struct6.c:  In this program, the whole structure is passed to another function by address. It means only the address of the structure is passed to another function. The whole structure is not passed to another function with all members and their values. So, this structure can be accessed from called function by its address.
+
+
+Operating system can be built using a framework.
+
+How to implement framwork using structures:
+-------------------------------------------
+layer1.c,layer2.c,layer.h: explain how to communicate one layer to another layer. Here layer1 acts as a consumer and layer2 acts as a prodcuer.
+
+
+

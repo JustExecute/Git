@@ -1,0 +1,88 @@
+*******************************************************************
+compiler is a process of transulation.
+build is a process of create packages.
+
+Step1: Source file (first.c)
+
+Step2: Compile
+      a. Preprocessor (first.c) to (first.i)   gcc -E -v first.c -o first.i 
+      b. Compile      (first.i) to (first.s)   gcc -S -v first.i -o first.s
+      c. Assemler     (first.s) to (first.o)   gcc -c -v first.s -o first.o
+
+Step3: Build 
+      a. Linker tool.  gcc first.o -o first
+      b. Runtime code (Library Code)
+
+objdump -D first.o | more (Relocatale binary code). Platform independent
+
+objdump -D first | more. (Executable binary code) Platform dependent.
+
+**************** ELF File Format  ***********************************************************
+km@km:~/ERTOS/gcc$ file first.c
+first.c: ASCII text
+km@km:~/ERTOS/gcc$ file first.i
+first.i: ASCII C program text
+km@km:~/ERTOS/gcc$ file first.s
+first.s: ASCII assembler program text
+km@km:~/ERTOS/gcc$ file first.o
+first.o: ELF 32-bit LSB relocatable, Intel 80386, version 1 (SYSV), not stripped
+km@km:~/ERTOS/gcc$ file first
+first: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, not stripped
+*******************************************************************************************************************
+
+Executale and Linkable Format (ELF) is a standard binary file format.
+
+readelf -a first | more  (readelf is a details of ELF file)
+
+creation of exec file using Dynamic linker 
+
+gcc first.c -o first (by default)
+
+creation of exec file using Static linker 
+
+gcc -static first.c -o first
+
+
+Procedure for Creation of static libraries:
+------------------------------------------
+Step1: Implementaion of Source code.
+	one.c
+	two.c
+Step2: Compile source code up to object file.
+	gcc -c one.c two.c
+Step3: Use UNIX archive tools create library image.
+	ar -rcs libourown.a one.o two.o
+
+Procedure for Creation of Dynamic libraries (Shared Libraries):
+---------------------------------------------------------------
+Step1: Implementaion of Source code.
+	one.c
+	two.c
+Step2: Compile source to create position independent relocatale.
+	gcc -c -fpic one.c
+	gcc -c -fpic two.c
+Step3: 
+	gcc -shared -o libourown.so one.o two.o
+
+
+Telling GCC where to find the User defiend header file:
+----------------------------------------------------
+-I <USER DEFINED HEADER PATH>
+
+Telling GCC where to find the shared library:
+--------------------------------------------
+
+Why -l<library name>, -L and LD_LIBRARY_PATH?
+
+-l<library name> means compiler search the library
+-L <path> means gcc compiler checks libraries at compilation time in path location.
+
+Making the library available at runtime:
+---------------------------------------
+LD_LIBRARY_PATH=<path> means binary execution time checks the library PATH.
+
+km@km:~/ERTOS/gcc/lib$ file libourown.a
+libourown.a: current ar archive
+km@km:~/ERTOS/gcc/lib$ file libourown.so
+libourown.so: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, not stripped
+

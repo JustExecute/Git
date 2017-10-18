@@ -1,0 +1,17 @@
+stdinout
+-------
+
+getchar.c - How getchar std c library works?.
+getchar1.c,getchar2.c - copies input to output one charater at a time.
+
+mygetchar.c: write your own version of getchar std C library.
+ctl+d indicates EOF (-1).
+
+
+
+
+Whenever you input a character or string from stdin in C, always make sure there is no \n in the input buffer. To do this, always getchar() after taking integer or float inputs.
+
+In your case, maybe you've inputted an integer before inputting the character. So try to write a getchar() before taking the character input.
+
+

@@ -1,0 +1,44 @@
+C Programming:
+-------------
+1. Introduction to C Programming
+2. Writing, Compiling, and debugging C Programs
+   GNU Toolchain
+	GCC 
+	GNU Makefile
+	GNU binutils
+	GNU Buildsystem
+	GDB (GNU Debugger)
+    Static and Dynamic Libraries.
+3. Variables and Data Types
+4. Operators Basics
+5. Control Statements
+6. Memory Segmentation
+  	Memory Layout of C program.
+	Storage Classes
+	Stack Frame
+	
+7. Bitwise Operators
+8. Functions
+9. C Preprocessor
+10.Arrays
+11.Pointers 
+	Function pointers
+	Mixing Assembly and C
+	Static Memory Allocation
+	Dynamic Memory Allocation
+	
+12. Strings
+13. Structure and Unions
+	Structure Padding
+	Structure Bit fields
+
+Data Structures:
+---------------
+	Introduction to DS
+	Introduction to Algorithms
+	Linear Data Structures
+	Linked Lists
+	Sorting 
+	Binary Trees
+	Heap Sort
+

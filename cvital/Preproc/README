@@ -1,0 +1,78 @@
+C Preprocessor directives:
+--------------------------
+	Before a C program is compiled in a compiler, source code is processed by a program called preprocessor. 
+	This process is called preprocessing.
+	Commands used in preprocessor are called preprocessor directives and they begin with “#” symbol.
+	Below is the list of preprocessor directives that C language offers
+
+Preprocessor			Syntax				Description
+---------------------------------------------------------------------------------------------------------------
+Macro				#define			This macro defines constant value and can be any of the 
+							basic data types.
+
+Header file inclusion		#include <file_name>	The source code of the file “file_name” is included in the 
+							main program at the specified place.
+
+Conditional compilation		#ifdef, #endif, #if,    Set of commands are included or excluded in source program 
+				#else,  #ifndef	        before compilation with respect to the condition
+
+Other directives		#undef, #pragma		#undef is used to undefine a defined macro variable. 
+							#Pragma is used to call a function before and after main 
+							function in a C program
+----------------------------------------------------------------------------------------------------------------
+
+Predefined Macros
+-----------------
+ANSI C defines a number of macros. Although each one is available for use in programming, the predefined macros should not be directly modified.
+Macro	Description
+__DATE__	The current date as a character literal in "MMM DD YYYY" format.
+__TIME__	The current time as a character literal in "HH:MM:SS" format.
+__FILE__	This contains the current filename as a string literal.
+__LINE__	This contains the current line number as a decimal constant.
+__STDC__	Defined as 1 when the compiler complies with the ANSI standard
+
+
+Preprocessor Operators
+----------------------
+The Macro Continuation (\) Operator
+-----------------------------------
+#define message(a,b) \
+Printf(“hello world”)
+The Stringize (#) Operator
+--------------------------
+The stringize or number-sign operator ( '#' ), when used within a macro definition, converts a macro parameter 
+into a string constant.
+
+#include <stdio.h>
+#define  message_for(a, b)  \
+   printf(#a " and " #b ": We love you!\n")
+int main(void) {
+   message_for(Carole, Debra);
+   return 0;
+}
+
+Output
+Carole and Debra: We love you!
+
+The Token Pasting (##) Operator
+-------------------------------
+The token-pasting operator (##) within a macro definition combines two arguments. It permits two separate tokens in the macro definition to be joined into a single token
+#include <stdio.h>
+#define tokenpaster(n) printf ("token" #n " = %d", token##n)
+int main(void) {
+   int token34 = 40;
+   tokenpaster(34);
+   return 0;
+}
+Output: token34 =40
+
+Examples:
+--------
+preproc1.c: This Example program for #define, #include preprocessors in C
+preproc2.c: This Example program for #ifdef, #else and #endif in C:
+preproc3.c: This Example program for #ifndef and #endif in C:
+preproc4.c: Example program for #if, #else and #endif in C:
+preproc5.c: Example program for pragma in C:
+preproc6.c: This examples shows How to use predefined Macros.
+
+
